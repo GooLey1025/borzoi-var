@@ -19,7 +19,7 @@ Borzoi-var/
 
 ## Setup
 
-1. create conda_env
+1. Create conda_env
 ```bash
 conda env create -n borzoi_var python=3.10
 ```
