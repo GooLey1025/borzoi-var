@@ -7,6 +7,8 @@ borzoi/examples/saved_models
 
 borzoi-paper/data/training/data/hg38/mseqs_unmap.npy
 borzoi-paper/data/training/data/mm10/mseqs_unmap.npy
+
+basenji/
 # Python
 __pycache__/
 *.py[cod]
