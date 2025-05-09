@@ -64,7 +64,7 @@ def main():
     train_options.add_option(
         "--restore",
         dest="restore",
-        help="Restore model and continue training, from existing fold train dir [Default: %default]",
+        help="Restore model and continue training, from existing fold train dir [Default: %default], e.g saved_models",
     )
     train_options.add_option(
         "--trunk",

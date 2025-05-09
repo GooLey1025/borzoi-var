@@ -172,7 +172,7 @@ def multi_update_status(jobs, max_attempts=3, sleep_attempt=5):
             for j in jobs:
                 if line_id == j.id:
                     # j.status = a[5] # original
-                    j.status = a[4] # cb2
+                    j.status = a[5] # cb2
 
         attempt += 1
 
@@ -267,15 +267,15 @@ class Job:
         print('#SBATCH -n 1', file=sbatch_out)
         print('#SBATCH -c %d' % self.cpu, file=sbatch_out)
         if self.name:
-            print('#SBATCH -J %s' % self.name, file=sbatch_out)
+            print(f'#SBATCH -J {self.name}', file=sbatch_out)
         if self.out_file:
-            print('#SBATCH -o %s' % self.out_file, file=sbatch_out)
+            print(f'#SBATCH -o {self.out_file}', file=sbatch_out)
         if self.err_file:
-            print('#SBATCH -e %s' % self.err_file, file=sbatch_out)
+            print(f'#SBATCH -e {self.err_file}', file=sbatch_out)
         if self.mem:
-            print('#SBATCH --mem %d' % self.mem, file=sbatch_out)
+            print(f'#SBATCH --mem {self.mem}', file=sbatch_out)
         if self.time:
-            print('#SBATCH --time %s' % self.time, file=sbatch_out)
+            print(f'#SBATCH --time {self.time}', file=sbatch_out)
         print(self.cmd, file=sbatch_out)
 
         sbatch_out.close()
