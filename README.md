@@ -4,7 +4,7 @@ This repository is a customized variant of the Borzoi project, developed to supp
 
 ## Overview
 
-Borzoi-var is a specialized version of the Borzoi deep learning model.
+Borzoi-var is a specialized version of the [Borzoi](https://github.com/calico/borzoi) deep learning model.
 
 ## Project Structure
 
