@@ -1,10 +1,10 @@
 # Borzoi-var
 
-A variant of the Borzoi project, focusing on genomic variant analysis and prediction. This repository contains modified versions of Borzoi and its dependencies (Baskerville and Westminster) with custom enhancements for variant analysis.
+This repository is a customized variant of the Borzoi project, developed to support my research activities.
 
 ## Overview
 
-Borzoi-var is a specialized version of the Borzoi deep learning model, adapted for genomic variant analysis. It combines the power of Borzoi's sequence modeling with custom modifications for improved variant effect prediction and analysis.
+Borzoi-var is a specialized version of the Borzoi deep learning model.
 
 ## Project Structure
 
@@ -19,26 +19,46 @@ Borzoi-var/
 
 ## Setup
 
-1. Clone the repository:
+1. create conda_env
+```bash
+conda env create -n borzoi_var python=3.10
+```
+2. Clone the repository:
 ```bash
 git clone https://github.com/your-username/borzoi-var.git
 cd borzoi-var
 ```
 
-2. Install the packages in editable mode:
+3. Install the packages in editable mode:
 ```bash
 pip install -e ./borzoi
 pip install -e ./baskerville
 pip install -e ./westminster
 ```
+4. Manually set enviroment variables in this conda borzoi_var environment:
+```bash
+# You should modify your $CONDA_PREFIX,$USER_PATH,$USER.
+mkdir -p $CONDA_PREFIX/etc/conda/activate.d
+cat <<EOF > $CONDA_PREFIX/etc/conda/activate.d/env_var.sh
+export BORZOI_DIR=/home/$USER_PATH/Borzoi/borzoi
+export PATH=\$BORZOI_DIR/src/scripts:\$PATH
+export PYTHONPATH=\$BORZOI_DIR/src/scripts:\$PYTHONPATH
 
-## Development
+export BASKERVILLE_DIR=/home/$USER_PATH/Borzoi/baskerville
+export PATH=\$BASKERVILLE_DIR/src/baskerville/scripts:\$PATH
+export PYTHONPATH=\$BASKERVILLE_DIR/src/baskerville/scripts:\$PYTHONPATH
 
-Each package is maintained as a separate git repository, allowing for independent version control while keeping everything organized in one place. The modifications focus on improving variant analysis capabilities while maintaining compatibility with the original packages.
+export WESTMINSTER_DIR=/home/$USER_PATH/Borzoi/westminster
+export PATH=\$WESTMINSTER_DIR/src/westminster/scripts:\$PATH
+export PYTHONPATH=\$WESTMINSTER_DIR/src/westminster/scripts:\$PYTHONPATH
 
-## License
+export BORZOI_CONDA=/home/$USER/anaconda3/etc/profile.d/conda.sh
+export BORZOI_HG38=\$BORZOI_DIR/examples/hg38
+export BORZOI_MM10=\$BORZOI_DIR/examples/mm10
+export BASKERVILLE_CONDA=\$BORZOI_CONDA
+EOF
+```
 
-See individual package licenses in their respective directories.
 
 ## Acknowledgments
 
