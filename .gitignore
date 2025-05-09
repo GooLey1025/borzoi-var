@@ -1,3 +1,10 @@
+# borzoi/
+borzoi/small_models
+borzoi/examples/hg38
+borzoi/examples/mm10
+borzoi/examples/data
+borzoi/examples/saved_models
+
 # Python
 __pycache__/
 *.py[cod]
@@ -52,9 +59,3 @@ Thumbs.db
 *.zip
 *.tar
 *.tar.gz
-
-# Keep the original .git directories of submodules
-!.git/
-!borzoi/.git/
-!baskerville/.git/
-!westminster/.git/ 

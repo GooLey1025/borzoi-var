@@ -1,0 +1,1 @@
+index	genome	identifier	file	clip	scale	sum_stat	description
