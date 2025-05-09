@@ -62,4 +62,4 @@ EOF
 
 ## Acknowledgments
 
-This project is based on the original Borzoi model and its dependencies, with custom modifications for variant analysis. 
+This project is based on the original Borzoi model and its dependencies, with custom modifications for research activities. 
