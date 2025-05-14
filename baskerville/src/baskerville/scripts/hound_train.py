@@ -111,7 +111,7 @@ def main():
 
     for data_dir in args.data_dirs:
         # set strand pairs
-        targets_df = pd.read_csv("%s/targets.txt" % data_dir, sep="\t", index_col=0)
+        targets_df = pd.read_csv(f"{data_dir}/targets.txt", sep="\t", index_col=0)
         if "strand_pair" in targets_df.columns:
             strand_pairs.append(np.array(targets_df.strand_pair))
 

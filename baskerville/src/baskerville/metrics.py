@@ -400,7 +400,6 @@ class PearsonR(tf.keras.metrics.Metric):
             reduce_axes = [0, 1]
 
         product = tf.reduce_sum(tf.multiply(y_true, y_pred), axis=reduce_axes)
-        self._product.assign_add(product)
 
         true_sum = tf.reduce_sum(y_true, axis=reduce_axes)
         self._true_sum.assign_add(true_sum)

@@ -516,7 +516,7 @@ def main():
                     name="read_t%d" % ti,
                     out_file="%s.out" % seqs_cov_stem,
                     err_file="%s.err" % seqs_cov_stem,
-                    queue="standard",
+                    queue="gpu",
                     mem=15000,
                     time="12:0:0",
                 )

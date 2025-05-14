@@ -71,7 +71,7 @@ class SeqDataset:
         self.tfr_pattern = tfr_pattern
 
         # read data parameters
-        data_stats_file = "%s/statistics.json" % self.data_dir
+        data_stats_file = f"{self.data_dir}/statistics.json"
         with open(data_stats_file) as data_stats_open:
             data_stats = json.load(data_stats_open)
         self.seq_length = data_stats["seq_length"]
@@ -92,10 +92,10 @@ class SeqDataset:
 
         # extract or compute sequence statistics
         if self.tfr_pattern is None:
-            self.tfr_path = "%s/tfrecords/%s-*.tfr" % (self.data_dir, self.split_label)
-            self.num_seqs = data_stats["%s_seqs" % self.split_label]
+            self.tfr_path = f"{self.data_dir}/tfrecords/{self.split_label}-*.tfr"
+            self.num_seqs = data_stats[f"{self.split_label}_seqs"]
         else:
-            self.tfr_path = "%s/tfrecords/%s" % (self.data_dir, self.tfr_pattern)
+            self.tfr_path = f"{self.data_dir}/tfrecords/{self.tfr_pattern}"
             self.compute_stats()
 
         # make tf.data.Dataset object
